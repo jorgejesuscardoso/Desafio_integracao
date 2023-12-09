@@ -1,0 +1,38 @@
+version: '3'
+services:
+  node:
+    build:
+      dockerfile: ./Dockerfile
+      context: .
+    container_name: socialbush
+    restart: always
+    working_dir: /app
+    volumes:
+      - ./:/app
+    ports:
+      - 3001:3001
+    environment:
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 8309
+      MYSQL_HOST: database
+      MYSQL_PORT: 3306
+    depends_on:
+      database:
+        condition: service_healthy
+  database:
+    image: mysql:8.0.29
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 8309
+      MYSQL_DATABASE: socialbush
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 5s
+      retries: 5
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+     # - ./socialbush_script.sql:/docker-entrypoint-initdb.d/socialbush_script.sql
+volumes:
+  mysql-data:
