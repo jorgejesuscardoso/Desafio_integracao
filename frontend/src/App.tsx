@@ -5,7 +5,8 @@ function App() {
  
   return (
     <Routes>
-      <Route path="/" element={<Profile />} />
+      <Route index element={<h1>Login</h1>} />
+      <Route path="/profile" element={<Profile />} />
     </Routes>
   )
 }

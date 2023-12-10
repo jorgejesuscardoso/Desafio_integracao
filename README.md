@@ -76,7 +76,7 @@ Para instalar use o comando no terminal `npm install styled-components`
 
 Para utilizar bastar criar um arquivo .tsx e estilizar.
 
-### Redux S2
+### Redux
 #### Instalação
 
 Para instalar essa maravilhosa ferramenta, basta inserir no seu terminal o comando `npm install redux react-redux`
