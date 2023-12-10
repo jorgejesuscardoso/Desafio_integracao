@@ -1,6 +1,17 @@
 version: '3'
 services:
-  node:
+  frontend:
+    build: ./frontend/
+    restart: on-failure
+    ports:
+      - 3030:5173
+    depends_on:
+      - backend
+    volumes:
+      - ./:/frontend/app
+    networks:
+      - socialbush-1
+  backend:
     build:
       dockerfile: ./backend/Dockerfile
       context: .
@@ -19,6 +30,9 @@ services:
     depends_on:
       database:
         condition: service_healthy
+    networks:
+      - socialbush-1
+      - socialbush-2
   database:
     image: mysql:8.0.29
     restart: always
@@ -34,5 +48,11 @@ services:
     volumes:
       - mysql-data:/var/lib/mysql
       #- ./socialbush_script.sql:/docker-entrypoint-initdb.d/socialbush_script.sql
+    networks:
+      - socialbush-2
 volumes:
   mysql-data:
+
+networks:
+  socialbush-1:
+  socialbush-2:
