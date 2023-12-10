@@ -2,13 +2,13 @@ version: '3'
 services:
   node:
     build:
-      dockerfile: ./Dockerfile
+      dockerfile: ./backend/Dockerfile
       context: .
     container_name: socialbush
     restart: always
-    working_dir: /app
+    working_dir: /backend/app
     volumes:
-      - ./:/app
+      - ./:/backend/app
     ports:
       - 3001:3001
     environment:
@@ -33,6 +33,6 @@ services:
       - "3306:3306"
     volumes:
       - mysql-data:/var/lib/mysql
-     # - ./socialbush_script.sql:/docker-entrypoint-initdb.d/socialbush_script.sql
+      #- ./socialbush_script.sql:/docker-entrypoint-initdb.d/socialbush_script.sql
 volumes:
   mysql-data:

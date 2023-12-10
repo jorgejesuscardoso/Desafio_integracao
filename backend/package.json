@@ -1,0 +1,26 @@
+{
+  "name": "socialbush",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "node src/server.js",
+    "start": "nodemon src/server.js",
+    "test": "mocha tests/**/*$NAME*.test.js --exit"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
+    "mocha": "^10.0.0",
+    "nodemon": "2.0.15",
+    "sinon": "^14.0.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "4.17.1",
+    "fs": "^0.0.1-security",
+    "mysql2": "2.3.3"
+  }
+}
