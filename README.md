@@ -1,6 +1,6 @@
-## Dependências Front-end
-#### React-test-library
-##### Instalação
+# Dependências Front-end
+### React-test-library
+#### Instalação
 
 Utilize o comando
  
@@ -13,7 +13,7 @@ Com isso você irá instalar todos as depenências para poder rodar localmente: 
  - user-event, e
  - jest.
 
-##### Configuração
+#### Configuração
 
 Na pasta do frontend crie um arquivo chamado `setupTests.ts` e adicione o seguinte código, `import '@testin-library/jest-dom';`
 
@@ -45,8 +45,8 @@ No arquivo `vite.config.ts` na raiz da pasta frontend, adicione uma nova chave a
 
 Provavelmente na primeira vez que você executar o comando `npm run coverage`, será perguntado se deseja instalar o pacote `'@vitest/coverage-v8'`. Aperte Y para confirmar.
 
-#### React-Router-DOM
-##### Instalação
+### React-Router-DOM
+#### Instalação
 
 Para instalar a react-router-dom, utilize o comando abaixo:
 `npm i react-router-dom `
@@ -69,15 +69,15 @@ return (
 )
 `
 
-#### Styled Components
+### Styled Components
 #### Instalação
 
 Para instalar use o comando no terminal `npm install styled-components`
 
 Para utilizar bastar criar um arquivo .tsx e estilizar.
 
-#### Redux S2
-##### Instalação
+### Redux S2
+#### Instalação
 
 Para instalar essa maravilhosa ferramenta, basta inserir no seu terminal o comando `npm install redux react-redux`
 
