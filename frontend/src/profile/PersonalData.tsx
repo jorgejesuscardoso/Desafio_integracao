@@ -1,9 +1,16 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { useEffect } from "react";
 import { GetPersonalData } from "../utils/getUserData";
+import { HasToken } from "../utils/storage";
 
 export function PersonaData() {
   const { user } = GetPersonalData();
-  console.log(user);
+
+  useEffect(() => {
+    HasToken()
+  }
+  , [])
+
   return (
     <div>
       <h3>Dados Pessoais</h3>

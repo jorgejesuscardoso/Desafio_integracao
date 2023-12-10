@@ -1,22 +1,22 @@
 import { useEffect, useState } from "react";
 import { getPersonalData, getUser } from "../services/ApiGet";
-import { GetId } from "./getId";
+import { HasToken } from "./storage";
 
 export function GetUserData() {
   const [user, setUser] = useState([]);
-  const id = GetId();
+  const token = HasToken();
   useEffect(() => {
     async function fetchUser() {
-      const response = await getUser(id)
+      const response = await getUser(token)
       setUser(response)
     }
     fetchUser()
-  }, [id])
+  }, [token])
   return { user };
 }
 export const GetPersonalData = () => {
   const [user, setUser] = useState([]);  
-  const id = GetId();
+  const id = HasToken();
   useEffect(() => {
     async function fetchUser() {
       const response = await getPersonalData(id)
