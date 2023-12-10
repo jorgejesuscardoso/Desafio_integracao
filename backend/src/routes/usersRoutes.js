@@ -46,6 +46,35 @@ router.post('/:id/data', async (req, res) => {
   }
 });
 
+router.post('/login', async (req, res) => {
+  const user = req.body;
+  try {
+    if (!user.username || !user.password) {
+      return res.status(400).json({
+        message: 'É necessário informar username e password',
+      });
+    }
+    const [result] = await userDB.findAllUsers();
+    const userFound = result.find((userDB) => userDB.username === user.username);
+
+    if (userFound.password === user.password) {
+      const { password, ...userFoundWithoutPassword } = userFound;
+      return res.status(200).json({
+        message: 'Login realizado com sucesso!', user: userFoundWithoutPassword, token: userFound.id,
+      });
+    } else {
+      return res.status(401).json({
+        message: 'Usuário ou senha incorreta',
+      });
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({
+      message: 'Erro ao fazer login',
+    });
+  }
+});
+
 router.get('/', async (req, res) => {
   try {
     const users = await userDB.findAllUsers();
