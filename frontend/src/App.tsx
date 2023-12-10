@@ -7,6 +7,7 @@ function App() {
     <Routes>
       <Route index element={<h1>Login</h1>} />
       <Route path="/profile" element={<Profile />} />
+      <Route path="/profile/:id" element={<Profile />} />
     </Routes>
   )
 }

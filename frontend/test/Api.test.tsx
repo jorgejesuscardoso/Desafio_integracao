@@ -12,14 +12,21 @@ describe('Testa se API retorna oque é esperado', async () => {
     } as Response;
 
     const mock = vi.spyOn(global, 'fetch')
-   .mockResolvedValue(fetchResolved);
-   renderWithRouter(<App />, { route: '/profile' });
+    .mockResolvedValue(fetchResolved);
+    const { user } = renderWithRouter(<App />, { route: '/profile' });
 
-   const user1 = await screen.findByText(/João Silva/i);
-   const user2 = await screen.findByText(/Maria Silva/i);
+    const user1 = await screen.findByText(/João Silva/i);
+    const user2 = await screen.findByText(/Maria Silva/i);
+    const showPassword = await screen.findByTestId('profile-show-password-1');
 
-   expect(user1).toBeInTheDocument();
+    expect(user1).toBeInTheDocument();
+    expect(user2).toBeInTheDocument();
+    expect(showPassword).toHaveTextContent('Mostrar');
 
+    await user.click(showPassword);
+    expect(showPassword).toHaveTextContent('Ocultar');
+
+    mock.mockRestore();
   })
 
 });
