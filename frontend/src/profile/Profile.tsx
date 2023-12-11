@@ -1,14 +1,35 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-
-import { PersonaData } from "./PersonalData";
-import { UserData } from "./UserData";
+import { useEffect, useState } from "react";
+import { AsideLeftProfile } from "../asides/AsideLeftProfile"
+import { AsideRightProfile } from "../asides/AsideRightProfile"
+import { menuIcon, notPhotoIco } from "../utils/exports";
+import { Banner, FloatMenuIcon, Main } from "./Style";
+import { HasToken } from "../utils/storage";
+import { FloatMenu } from "../float-menu/FloatMenu";
 
 export function Profile() {
+  const [showFloatMenu, setShowFloatMenu] = useState(false);
+
+  useEffect(() => {
+    HasToken();
+  },[])
+
+  const handleShowFloatMenu = () => {
+    setShowFloatMenu(!showFloatMenu);
+  }
+
  return (
-   <div>
-    <h1>Perfil</h1>
-    <UserData />
-    <PersonaData />
-   </div>
+   <Main>
+    <FloatMenuIcon
+      onClick={ handleShowFloatMenu } >
+        <img src={ menuIcon } alt="Menu" />
+    </FloatMenuIcon>
+    { showFloatMenu && <FloatMenu /> }
+    <Banner>
+      <img src={ notPhotoIco } alt="Foto de Perfil" />
+    </Banner>
+    <AsideLeftProfile />
+    <AsideRightProfile />
+   </Main>
  )
 }

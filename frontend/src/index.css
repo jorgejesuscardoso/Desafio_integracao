@@ -1,0 +1,47 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.userphoto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 5%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --secondary-color-light: #bec2c9;
+  --secondary-color-dark: #5a6169;
+  --green-color: #00b74a;
+  --background-dark-color: #10121A;
+  --background-dark-grey: #191D2B;
+  --border-color: #2e344e;
+  --background-light-color: #F1F1F1;
+  --background-light-color-2: rgba(3,127,255, .3);
+  --white-color: #FFF;
+  --font-light-color: #a4acc4;
+  --font-dark-color: #313131;
+  --font-dark-color-2: #151515;
+  --sidebar-dark-color: #191D2B;
+  --scrollbar-bg-color: #383838;
+  --scrollbar-thump-color: #6b6b6b;
+  --scrollbar-track-color: #383838;
+  --aside-border-color: #2f2f2f60;
+  --logout-color: #f44336;
+  --logout-color-text: #1a0200b3;
+}

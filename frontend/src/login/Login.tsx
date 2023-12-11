@@ -1,7 +1,8 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { LoginProps } from "../types"
 import { HandleLogin } from "../services/ApiPost"
 import { useNavigate } from "react-router-dom"
+import { Errors, LoginMsg, Main, RegisterMsg } from "./style"
 
 export const Login = () => {
   const navigate = useNavigate()
@@ -12,6 +13,13 @@ export const Login = () => {
   const [isError, setIsError] = useState('')
   const [isLogin, setIsLoging] = useState('')
   const [isLoading, setIsLoading] = useState('')
+
+  useEffect(() => {
+    const token = localStorage.getItem("token")
+    if (token) {
+      navigate("/home")
+    }
+  }, [navigate])
 
   const handleLogin = async ( e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -26,17 +34,20 @@ export const Login = () => {
       setIsLoading("Carregando...")
 
       setTimeout(() => {
-      navigate("/profile")
+      navigate("/home")
       }, 2000)
 
     } else {
       console.log(isUser);
       console.log(response);
-      setIsError("Usuário ou senha incorretos!")
+      setIsError("Dados inválidos")
+    }
+    if (response.error) {
+      setIsError("Erro ao efetuar login")
     }
   }
   return (
-    <main>
+    <Main>
       <form onSubmit={ (e) => handleLogin(e) }>
         <h1>Login</h1>
         <div>
@@ -53,6 +64,9 @@ export const Login = () => {
                 }
               }
               placeholder="Digite seu nome de usuário"
+              minLength={ 4 }
+              maxLength={ 20 }
+              required
             />
           </div>
           <div>
@@ -68,24 +82,25 @@ export const Login = () => {
                 }
               }
               placeholder="Digite sua senha"
+              minLength={ 6}
               required
             />
           </div>
           <div>
             <button type="submit">Login</button>
           </div>
-          <div>
-            <p>{ isError }</p>
+            <Errors>{ isError }</Errors>
+          <LoginMsg>
             <p>{ isLogin }</p>
             <p>{ isLoading }</p>
-          </div>
+          </LoginMsg>
         </div>
         <div>
-          <p>
+          <RegisterMsg>
             Não possui uma conta? <a href="/register">Registrar</a>
-          </p>
+          </RegisterMsg>
         </div>
       </form>
-    </main>
+    </Main>
 )
 }

@@ -2,6 +2,7 @@
 import { useEffect } from 'react';
 import { GetUserData } from '../utils/getUserData';
 import { HasToken } from '../utils/storage';
+import { Content } from './Style';
 
 export const UserData = () => {
   const { user } = GetUserData()
@@ -12,7 +13,7 @@ export const UserData = () => {
   , [])
 
   return (
-    <div>
+    <Content>
       <h3>Dados de Usuário</h3>
       {user ? user.map((user: any) => (
         <div key={user.id}>
@@ -23,6 +24,6 @@ export const UserData = () => {
         </div>
       )) :
         <p>Carregando...</p>}
-    </div>
+    </Content>
   )
 }

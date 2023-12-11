@@ -1,9 +1,14 @@
+import { AsideLeft } from "../asides/AsideLeft"
+import { AsideRight } from "../asides/AsideRight"
 import Header from "../header/Hader"
+import { Main } from "./style"
 
 export const Home = () => {
     return (
-        <div>
+        <Main>
             <Header>Home</Header>
-        </div>
+            <AsideLeft />
+            <AsideRight />
+        </Main>
     )
 }
