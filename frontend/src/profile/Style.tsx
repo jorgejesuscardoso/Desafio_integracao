@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Main = styled.main`
   display: flex;
-  background-color: #f5f5f5;
   width: 100%;
   height: 100vh;
 `;
@@ -13,7 +12,7 @@ export const Banner = styled.header`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--secondary-color);
+  background-color: var(--background-dark-grey);
   width: 100%;
   height: 30vh;
 
@@ -36,16 +35,24 @@ export const Content = styled.div`
 `;
 
 export const FloatMenuIcon = styled.button`
+  background-color: var(--secondary-color-dark);
   position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   top: 1vh;
   right: 2%;
   width: 3rem;
+  height: 3rem;
   border: none;
   padding: 1rem;
+  border-radius: 50%;
   z-index: 11;
 
   &:hover {
+    background-color: var(--white-color-2);
     cursor: pointer;
+    border-radius: 50%;
   }
 
     img {

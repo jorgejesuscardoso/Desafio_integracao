@@ -1,18 +1,16 @@
 import styled from "styled-components";
 
 export const Left = styled.aside `
-    background-color: var(--secondary-color-dark);
     overflow: hidden;
     position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
-    top: 7vh;
+    top: 8vh;
     left: 0;
-    width: 17%;
-    height: 93vh;
+    width: 22%;
+    height: 92vh;
     border-right: 5px solid var(--aside-border-color);
-    border-top: 5px solid var(--aside-border-color);
     z-index: 1;
     ul {
         display: flex;
@@ -32,18 +30,16 @@ export const Left = styled.aside `
 `;
 
 export const Right = styled.aside `
-    background-color: var(--secondary-color-dark);
     overflow: hidden;
     position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
-    top: 7vh;
+    top: 8vh;
     right: 0;
-    width: 20%;
-    height: 93vh;
+    width: 23%;
+    height: 92vh;
     border-left: 5px solid var(--aside-border-color);
-    border-top: 5px solid var(--aside-border-color);
     z-index: 1;
     ul {
         display: flex;
@@ -63,7 +59,6 @@ export const Right = styled.aside `
 `;
 
 export const LeftProfile = styled.aside `
-    background-color: var(--secondary-color-dark);
     overflow: hidden;
     position: fixed;
     display: flex;
@@ -71,10 +66,9 @@ export const LeftProfile = styled.aside `
     align-items: center;
     top: 30vh;
     left: 0;
-    width: 20%;
+    width: 22%;
     height: 70vh;
     border-right: 5px solid var(--aside-border-color);
-    border-top: 5px solid var(--aside-border-color);
     z-index: 1;
     ul {
         display: flex;
@@ -94,7 +88,6 @@ export const LeftProfile = styled.aside `
 `;
 
 export const RightProfile = styled.aside `
-    background-color: var(--secondary-color-dark);
     overflow: hidden;
     position: fixed;
     display: flex;
@@ -102,10 +95,9 @@ export const RightProfile = styled.aside `
     align-items: center;
     top: 30vh;
     right: 0;
-    width: 20%;
+    width: 23%;
     height: 70vh;
     border-left: 5px solid var(--aside-border-color);
-    border-top: 5px solid var(--aside-border-color);
     z-index: 1;
     ul {
         display: flex;
@@ -116,7 +108,7 @@ export const RightProfile = styled.aside `
         width: 30%;
     }
     a {
-        color: var(--white-color);
+        color: var(--white-color-2);
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;

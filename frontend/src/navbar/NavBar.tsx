@@ -1,14 +1,15 @@
 import { Link } from 'react-router-dom';
-import { menuIcon, notPhotoIco } from '../utils/exports';
-import { Nav, ImgMenuIcon, UserPhoto } from './style';
+import { notPhotoIco} from '../utils/exports';
+import { Nav, UserPhoto } from './style';
 import { useState } from 'react';
 import { FloatMenu } from '../float-menu/FloatMenu';
 import Header from '../header/Hader';
+import { IconesNav } from './Icones';
 
 export function NavBar() {
   const [showMenu, setShowMenu] = useState(false);
 
-  const handleMenu = () => {
+  const toggleMenu = () => {
     setShowMenu(!showMenu);
   }
   return (
@@ -17,19 +18,9 @@ export function NavBar() {
         <Link to='/profile' className='userphoto'>
           <UserPhoto src={ notPhotoIco } alt="Foto do usuário" />
         </Link>
-        <ul>
-          <li>
-            <a href="/home">Home</a>
-          </li>
-          <li>
-            <a href="/profile">Profile</a>
-          </li>
-          <li>
-            <button onClick={ handleMenu } >            
-              <ImgMenuIcon src={ menuIcon } alt="Icone de menu" />
-            </button>          
-          </li>
-        </ul>
+        <IconesNav
+          toggleMenu={ toggleMenu }
+        />
       </Nav>
       { showMenu && <FloatMenu /> }
     </Header>

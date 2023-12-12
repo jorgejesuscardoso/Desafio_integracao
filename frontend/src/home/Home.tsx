@@ -6,7 +6,7 @@ import { Main } from "./style"
 export const Home = () => {
     return (
         <Main>
-            <Header>Home</Header>
+            <Header>Feed</Header>
             <AsideLeft />
             <AsideRight />
         </Main>

@@ -7,14 +7,4 @@ export const Main = styled.main`
   display: flex;
   justify-content: center;
   align-items: center;
-
-  &::after {
-      content: "";
-      position: fixed;
-      width: 63%;
-      top: 7vh;
-      right: 20%;
-      border-top: 5px solid var(--aside-border-color);
-      z-index: 2;
-    }
 `;
