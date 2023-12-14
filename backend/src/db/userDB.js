@@ -11,7 +11,7 @@ const insertUserData = (data, id) => conn.execute(
 );
 
 const insertUserImage = (image, id) => conn.execute(
-  'UPDATE user_data SET profile_pic = ? WHERE user_id = ?',
+  'UPDATE user_data SET photo = ? WHERE user_id = ?',
   [image, id]
 );
 

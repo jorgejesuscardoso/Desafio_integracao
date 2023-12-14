@@ -15,7 +15,23 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 router.post('/upload', upload.single('photo'), async (req, res) => {
-  res.status(201).json(`/${req.file.path}`);
+  
+    try {
+        if (!req.file) {
+            return res.status(400).json({ error: 'Arquivo não enviado.' });
+        }
+
+        
+        const fileName = req.file.originalname;
+        const userId = req.body.id; 
+
+        await userDB.insertUserImage(fileName, userId);
+
+       res.status(200).json({ message: 'Arquivo enviado com sucesso!' });
+    } catch (error) {
+        console.error("Erro no upload do arquivo:", error);
+        res.status(500).json({ error: 'Ocorreu um erro durante o upload.' });
+    }
 });
 
 module.exports = router;
