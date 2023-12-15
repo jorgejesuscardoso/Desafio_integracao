@@ -10,8 +10,7 @@ export const Home = () => {
 }, [])
 return (
 	<Main>
-		<AsideLeft />
-		
+		<AsideLeft />		
 		<AsideRight />
 	</Main>
 )

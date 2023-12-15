@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const NavBar = styled.nav`
-  background-color: var(--secondary-color-light);
   overflow: hidden;
   position: fixed;
   display: flex;
@@ -11,7 +10,7 @@ export const NavBar = styled.nav`
   right: 1%;
   width: 20%;
   height: 90vh;
-  border-radius: 7px;
+  border-radius: 0.5rem;
   z-index: 10;
     ul {
       background-color: var(--background-dark-grey-2);
@@ -25,6 +24,7 @@ export const NavBar = styled.nav`
       padding: 0;
       width: 99%;
       height: 99%;
+      gap: 1rem;
     }
     a {
       color: var(--secondary-color-light);
@@ -40,6 +40,8 @@ export const NavBar = styled.nav`
       align-items: center;
       height: 7vh;
       width: 95%;
+      border: 1px solid var(--secondary-color-light);
+      border-radius: 0.5rem;
       transition: background-color 0.1s ease;
     }
     li:hover {
@@ -52,7 +54,8 @@ export const NavBar = styled.nav`
 `;
 
 export const Lis = styled.li`
-  margin-top: 100%;
+  margin-top: 50%;
+  border: none !important;
 `;
 
 export const Logout = styled.button`

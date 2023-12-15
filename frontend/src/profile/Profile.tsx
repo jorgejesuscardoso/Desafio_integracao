@@ -2,13 +2,13 @@
 import { useEffect, useState } from "react";
 import { AsideLeftProfile } from "../asides/AsideLeftProfile"
 import { AsideRightProfile } from "../asides/AsideRightProfile"
-import { menuIcon } from "../utils/exports";
-import { FloatMenuIcon, Main, MainContentProfile, ProfileImg } from "./Style";
+import { IconsMenu, Main, MainContentProfile, ProfileImg } from "./Style";
 import { HasToken } from "../utils/storage";
-import { FloatMenu } from "../float-menu/FloatMenu";
 import { ProfilePhoto } from "../photo/ProfilePhoto";
 import Header from "../header/Hader";
 import { Feed } from "../feed/Feed";
+import { IconesNav } from "../navbar/Icones";
+import { FloatMenu } from "../float-menu/FloatMenu";
 
 export function Profile() {
   const [showFloatMenu, setShowFloatMenu] = useState(false);
@@ -17,7 +17,7 @@ export function Profile() {
     HasToken();
   },[])
 
-  const handleShowFloatMenu = () => {
+  const toggleMenu = () => {
     setShowFloatMenu(!showFloatMenu);
   }
 
@@ -29,12 +29,12 @@ export function Profile() {
       </ProfileImg>
     </Header>
     <MainContentProfile>
-      <FloatMenuIcon
-        onClick={ handleShowFloatMenu } >
-          <img src={ menuIcon } alt="Menu" />
-      </FloatMenuIcon>
-      { showFloatMenu && <FloatMenu /> }
-    
+      <IconsMenu>
+        <IconesNav
+          toggleMenu={ toggleMenu }
+        />
+      </IconsMenu>
+      { showFloatMenu && <FloatMenu />}
       <AsideLeftProfile />
       <AsideRightProfile />
       <Feed />

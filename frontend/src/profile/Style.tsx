@@ -89,3 +89,21 @@ export const ProfileImg = styled.div`
     border: 2px solid var(--secondary-color-light);
   }
 `;
+export const IconsMenu = styled.div`
+  background-color: var(--background-light-color);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 3vh;
+  right: 1%;
+  width: 10rem;
+
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      list-style: none;
+    }
+`;
