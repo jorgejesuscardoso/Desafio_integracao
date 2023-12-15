@@ -93,14 +93,67 @@ export const SectionPost = styled.section`
   height: 100%;
   border-radius: 0.5rem;
   margin-bottom: 1rem;
+`;
 
-    div {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      height: 300px;
-      background-color: var(--white-color-2);
-      border-radius: 0.5rem;
-      margin-bottom: 1rem;
+export const Cards = styled.div`
+  background-color: var(--black-color-1);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 300px;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+`;
+export const HeaderCard = styled.div`
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  height: 15%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  gap: 0.5rem;
+  
+  h3 {
+      font-size: 1.2rem;
+      color: var(--whit-color-1);
+      font-weight: bold;
     }
+  div {
+    display: flex;
+    align-items: center;
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 0.5rem;
+    }
+    
+  }
+  button {
+    width: 70px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    &:hover {
+      background-color: var(--white-color-1);
+    }
+  }
+`;
+
+export const ContentCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+  height: 80%;
+  margin-top: 2.5rem;
+  margin: 0 auto;
+  p {
+    font-size: 1.2rem;
+    color: var(--whit-color-1);
+  }
 `;

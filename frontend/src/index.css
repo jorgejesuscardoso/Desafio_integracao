@@ -40,6 +40,8 @@ body {
   --white-color: #FFF;
   --white-color-1: rgba(200,200,200, 1);
   --white-color-2: rgba(255,255,255,0.6);
+  --black-color: #000;
+  --black-color-1: rgba(20,20,20,.7);
   --font-light-color: #a4acc4;
   --font-dark-color: #313131;
   --font-dark-color-2: #151515;
