@@ -2,26 +2,20 @@ import styled from "styled-components";
 
 export const Main = styled.main`
   display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   height: 100vh;
 `;
 
-export const Banner = styled.header`
-  position: absolute;
+export const MainContentProfile = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--background-dark-grey);
-  width: 100%;
-  height: 30vh;
-
-    img {
-      width: 15vw;
-      height: 30vh;
-      border-radius: 50%;
-      border: 2px solid var(--secondary-color-light);
-    }
+  color: var(--white-color-2);
+  margin-top: 45vh;
+  width: 54%;
 `;
 
 export const Content = styled.div`
@@ -36,7 +30,7 @@ export const Content = styled.div`
 
 export const FloatMenuIcon = styled.button`
   background-color: var(--secondary-color-dark);
-  position: fixed;
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,4 +53,39 @@ export const FloatMenuIcon = styled.button`
       width: 30px;
       height: 30px;
     }
+`;
+
+export const MainSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--white-color);
+  width: 100%;
+`;
+export const MainContentAsideLeft = styled.div`
+  display: flex;
+  flex-direction: column;
+  color: var(--white-color-2);
+  margin-top: 3vh;
+  margin-bottom: 5vh;
+  width: 90%;
+  gap: 1rem;
+  border-bottom: 2px solid var(--aside-border-color);
+
+    p {
+      margin-top: 0.2rem;
+      margin-bottom: 0.2rem;
+    }
+`;
+
+export const ProfileImg = styled.div`
+  position: absolute;
+  top: 7vh;
+  left: 42%;
+  img {
+    width: 15vw;
+    height: 30vh;
+    border-radius: 50%;
+    border: 2px solid var(--secondary-color-light);
+  }
 `;

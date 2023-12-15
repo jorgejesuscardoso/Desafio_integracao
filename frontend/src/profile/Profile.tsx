@@ -2,10 +2,13 @@
 import { useEffect, useState } from "react";
 import { AsideLeftProfile } from "../asides/AsideLeftProfile"
 import { AsideRightProfile } from "../asides/AsideRightProfile"
-import { menuIcon, notPhotoIco } from "../utils/exports";
-import { Banner, FloatMenuIcon, Main } from "./Style";
+import { menuIcon } from "../utils/exports";
+import { FloatMenuIcon, Main, MainContentProfile, ProfileImg } from "./Style";
 import { HasToken } from "../utils/storage";
 import { FloatMenu } from "../float-menu/FloatMenu";
+import { ProfilePhoto } from "../photo/ProfilePhoto";
+import Header from "../header/Hader";
+import { Feed } from "../feed/Feed";
 
 export function Profile() {
   const [showFloatMenu, setShowFloatMenu] = useState(false);
@@ -20,16 +23,22 @@ export function Profile() {
 
  return (
    <Main>
-    <FloatMenuIcon
-      onClick={ handleShowFloatMenu } >
-        <img src={ menuIcon } alt="Menu" />
-    </FloatMenuIcon>
-    { showFloatMenu && <FloatMenu /> }
-    <Banner>
-      <img src={ notPhotoIco } alt="Foto de Perfil" />
-    </Banner>
-    <AsideLeftProfile />
-    <AsideRightProfile />
+    <Header>
+      <ProfileImg>      
+        <ProfilePhoto />
+      </ProfileImg>
+    </Header>
+    <MainContentProfile>
+      <FloatMenuIcon
+        onClick={ handleShowFloatMenu } >
+          <img src={ menuIcon } alt="Menu" />
+      </FloatMenuIcon>
+      { showFloatMenu && <FloatMenu /> }
+    
+      <AsideLeftProfile />
+      <AsideRightProfile />
+      <Feed />
+    </MainContentProfile>
    </Main>
  )
 }

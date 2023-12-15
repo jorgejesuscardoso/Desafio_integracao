@@ -15,7 +15,7 @@ export function GetUserData() {
   return { user };
 }
 export const GetPersonalData = () => {
-  const [user, setUser] = useState([]);  
+  const [user, setUser] = useState({});  
   const id = HasToken();
   useEffect(() => {
     async function fetchUser() {

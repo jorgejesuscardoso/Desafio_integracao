@@ -1,17 +1,12 @@
+import { PersonalData } from "../profile/PersonalData"
 import { LeftProfile } from "./style"
-
-export const AsideLeftProfile = () => {
-
-    const handleSendPhoto = (e) => {
-        e.preventDefault();        
-    }
-    return (
-        <LeftProfile>
-            <form action="POST" onSubmit={ (e) => handleSendPhoto(e) }>
-                <label htmlFor="file">Enviar Foto</label>
-                <input type="file" id="file" />
-                <button type="submit">Enviar</button>
-            </form>
-        </LeftProfile>
-    )
+export const AsideLeftProfile = () => {  
+  
+  return (
+    <LeftProfile>
+      <main>        
+       <PersonalData />
+      </main>
+    </LeftProfile>
+  )
 }

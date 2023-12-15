@@ -1,14 +1,18 @@
+import { useEffect } from "react"
 import { AsideLeft } from "../asides/AsideLeft"
 import { AsideRight } from "../asides/AsideRight"
-import Header from "../header/Hader"
 import { Main } from "./style"
+import { HasToken } from "../utils/storage"
 
 export const Home = () => {
-    return (
-        <Main>
-            <Header>Feed</Header>
-            <AsideLeft />
-            <AsideRight />
-        </Main>
-    )
+	useEffect(() => {
+		HasToken();
+}, [])
+return (
+	<Main>
+		<AsideLeft />
+		
+		<AsideRight />
+	</Main>
+)
 }

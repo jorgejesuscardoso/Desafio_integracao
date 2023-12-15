@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export const UserPhoto = styled.img`
-  width: 45px;
-  height: 45px;
+export const UserPhoto = styled.div`
+  width: 50px;
+  height: 50px;
 `;
 
 export const Nav = styled.nav`

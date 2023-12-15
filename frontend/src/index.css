@@ -21,8 +21,6 @@ body {
   justify-content: center;
   align-items: center;
   position: absolute;
-  width: 50px;
-  height: 50px;
   left: 5%;
   border-radius: 50%;
   object-fit: cover;
@@ -40,7 +38,8 @@ body {
   --background-light-color: #F1F1F1;
   --background-light-color-2: rgba(3,127,255, .3);
   --white-color: #FFF;
-  --white-color-2: rgba(255,255,255,.6);
+  --white-color-1: rgba(200,200,200, 1);
+  --white-color-2: rgba(255,255,255,0.6);
   --font-light-color: #a4acc4;
   --font-dark-color: #313131;
   --font-dark-color-2: #151515;
