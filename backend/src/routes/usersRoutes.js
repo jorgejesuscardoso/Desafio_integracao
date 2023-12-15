@@ -104,7 +104,12 @@ router.get('/:id/data', async (req, res) => {
   try {
     const { id } = req.params;
     const user = await userDB.findUserData(id);
-    res.status(200).json(user[0]);
+
+    const photoPath = `http://localhost:3001/profilePhotos/${user[0][0].photo}`;
+    const bannerPath = `http://localhost:3001/profilePhotos/banner/${user[0][0].banner}`;
+    const usarData = photoPath ? { ...user[0][0], photo: photoPath, banner: bannerPath } : user[0][0];
+
+    res.status(200).json(usarData);
   } catch (err) {
     console.error(err);
     res.status(500).json({

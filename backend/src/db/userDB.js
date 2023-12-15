@@ -15,6 +15,11 @@ const insertUserImage = (image, id) => conn.execute(
   [image, id]
 );
 
+const insertUserBanner = (banner, id) => conn.execute(
+  'UPDATE user_data SET banner = ? WHERE user_id = ?',
+  [banner, id]
+);
+
 const findAllUsers = () => conn.execute(
   'SELECT * FROM user'
 );
@@ -106,4 +111,5 @@ module.exports = {
   deleteUser,
   deleteUserData,
   insertUserImage,
+  insertUserBanner,
 };
