@@ -15,10 +15,6 @@ const storage = multer.diskStorage({
 		const userId = req.body.id;
 		let fileType = 'photo';
 
-		if (req.baseUrl === '/banner') {
-			fileType = 'banner';
-		}
-
 		const extension = path.extname(file.originalname);
 		const newFileName = `${fileType}_user_${userId}${extension}` ;
 		cb(null, newFileName);
