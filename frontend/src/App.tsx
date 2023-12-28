@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom"
-import { Profile } from "./profile/Profile"
+import { Profile } from "./profile/ProfileContent"
 import { Login } from "./login/Login"
 import { Home } from "./home/Home"
 import { LayOut } from "./layout/LayOut"

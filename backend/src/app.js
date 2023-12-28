@@ -3,6 +3,7 @@ const cors = require('cors');
 const usersRoutes = require('./routes/usersRoutes');
 const userPhotosRoutes = require('./routes/userPhotosRoutes');
 const userBannerRoute = require('./routes/userBannerRoute');
+const userPostRoute = require('./routes/userPostRoute');
 const path = require('path');
 
 const app = express();
@@ -14,5 +15,6 @@ app.use(express.json());
 
 app.use('/photo', userPhotosRoutes, userBannerRoute);
 app.use('/user', usersRoutes);
+app.use('/post', userPostRoute);
 
 module.exports = app;

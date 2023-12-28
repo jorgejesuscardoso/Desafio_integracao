@@ -9,7 +9,6 @@ import { User } from "../types";
 export function PersonalData() {
   const { user } = GetPersonalData();
   const { first_name, last_name, birth_day, age, phone, address, cep, city, state, id } = user as User;
-  console.log(user)
   useEffect(() => {
     HasToken()
   }

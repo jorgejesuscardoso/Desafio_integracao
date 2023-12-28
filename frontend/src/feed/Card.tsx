@@ -1,25 +1,46 @@
-import { ProfilePhoto } from "../photo/ProfilePhoto"
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Cards, ContentCard, HeaderCard } from "./style"
-import { GetPersonalData } from "../utils/getUserData"
-import { User } from "../types";
+import { useEffect, useState } from "react";
+import { getPosts } from "../services/ApiHandlePosts";
+import { TumbPost } from "../photo/TumbPosts";
+import { HasToken } from "../utils/storage";
 
 export const Card = () => {
-  const { user } = GetPersonalData();
-  const { first_name, last_name } = user as User;
+  const [posts, setPosts] = useState([])
+  useEffect(() => {
+    const path = window.location.pathname.split('/')
+    let id: number;
+    if (path[1] === 'profile') {
+      id = HasToken()
+    } else {
+      id = 0
+    }
+    async function fetchPost() {
+     const posts = await getPosts(id)
+    setPosts(posts)
+    }
+    fetchPost()
+  }, [])
   return (
     <Cards>
-      <HeaderCard>
-        <ProfilePhoto />
-          <h3>{ first_name} { last_name }</h3>
-          <p>Há 2 horas</p>
-      </HeaderCard>
-      <ContentCard>
-        <p>Olá, mundo!</p>
-        <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam commodi ea quas nulla earum sed libero id laudantium nemo harum!</h2>
-        <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam commodi ea quas nulla earum sed libero id laudantium nemo harum!</h2>
-        
-      </ContentCard>
+      { posts && posts.map((post: any) => (
+        <div key={ post.post_id }>
+          <HeaderCard>
+            <TumbPost
+              photo={ post.photoUrl }
+            />
+            <h3>{ post.user_name} { post.last_name }</h3>
+            <p>Há 2 horas</p>
+          </HeaderCard>
 
+          <ContentCard >
+            <p>{ post.content }</p>
+          </ContentCard>
+        </div>
+      )
+        
+        )
+      }
     </Cards>
   )
 }
