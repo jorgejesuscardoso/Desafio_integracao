@@ -18,7 +18,7 @@ async function getPosts(id) {
   }
   if (!id) {
     const sql = `
-    SELECT post.content as 'content', post.create_time, user_data.first_name as 'user_name', user_data.last_name as 'last_name',user_data.photo as 'photo', user.id as 'user_id', post.post_id as 'post_id'
+    SELECT post.content as 'content', post.create_time as create_at, user_data.first_name as 'user_name', user_data.last_name as 'last_name',user_data.photo as 'photo', user.id as 'user_id', post.post_id as 'post_id'
     FROM post
     INNER JOIN user ON post.user_id = user.id
     INNER JOIN user_data ON user.id = user_data.user_id

@@ -215,3 +215,14 @@ export const TextAreaEditPost = styled.div`
     }
   }
 `;
+
+export const BtnProfileLink = styled.button`
+  width: 30% !important;
+  color: var(--white-color-1);
+  text-align: start;
+
+    &:hover {
+      color: var(--secondary-color);
+      background-color: transparent !important;
+    }
+`;
