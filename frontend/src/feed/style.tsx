@@ -52,9 +52,6 @@ export const TextArea = styled.textarea`
   font-size: 1.2rem;
   outline: none;
   resize: none;
-  &:focus {
-    border: 1px solid var(--primary-color);
-  }
 `;
 export const IcoContent = styled.div`
   width: 100%;
@@ -155,5 +152,66 @@ export const ContentCard = styled.div`
   p {
     font-size: 1.2rem;
     color: var(--whit-color-1);
+  }
+`;
+
+export const MenuCard = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white-color);
+  border: 1px solid var(--secondary-color) !important;  
+  width: 25px !important;
+  height: 20px !important;
+    &:hover {
+      background-color: var(--secondary-color) !important;
+    }
+`;
+export const DisplayMenuCard = styled.div`
+  background-color: var(--secondary-color) !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--white-color);
+  width: 70px !important;
+  height: 50px !important;
+     &:hover {
+        button {
+        border-radius: 0;
+      }
+    }
+`;
+export const TextAreaEditPost = styled.div`
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: 25vh;
+  z-index: 100;
+  input {
+    background-color: var(--white-color-1);
+    width: 100%;
+    height: 85%;
+    border: 1px solid var(--color-border);
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    outline: none;
+    resize: none;
+  }
+  button {
+    width: 70px;
+    height: 30px;
+    margin-top: 0.5rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: var(--white-color);
+    border: 1px solid var(--secondary-color) !important;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    &:hover {
+      background-color: var(--white-color-1);
+    }
   }
 `;

@@ -4,7 +4,7 @@ async function getPosts(id) {
  try {
   if (id) {
     const sql = `
-    SELECT post.content as 'content', post.create_time, user_data.first_name as 'user_name', user_data.last_name as 'last_name',user_data.photo as 'photo', user.id as 'user_id', post.post_id as 'post_id'
+    SELECT post.content as 'content', post.create_time as create_at, user_data.first_name as 'user_name', user_data.last_name as 'last_name',user_data.photo as 'photo', user.id as 'user_id', post.post_id as 'post_id'
     FROM post
     INNER JOIN user ON post.user_id = user.id
     INNER JOIN user_data ON user.id = user_data.user_id
@@ -36,8 +36,6 @@ async function getPosts(id) {
   return null;
  }
 }
-
-
 const insertPost = async (content, user_id) => {
   try {
     const sql = `
@@ -51,7 +49,36 @@ const insertPost = async (content, user_id) => {
   }
 }
 
+const updatePost = async (content, id) => {
+  try {
+    const sql = `
+    UPDATE post
+    SET content = ?
+    WHERE post_id = ?
+    `;
+    const [result] = await conn.query(sql, [content, id]);
+    return result;
+  } catch (err) {
+    throw new Error("Erro ao atualizar post");
+  }
+}
+
+const deletePost = async (id) => {
+  try {
+    const sql = `
+    DELETE FROM post
+    WHERE post_id = ?
+    `;
+    const [result] = await conn.query(sql, [id]);
+    return result;
+  } catch (err) {
+    throw new Error("Erro ao deletar post");
+  }
+}
+
 module.exports = {
   getPosts,
-  insertPost
+  insertPost,
+  deletePost,
+  updatePost,
 };

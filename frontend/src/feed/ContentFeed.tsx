@@ -1,12 +1,50 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { useEffect, useState } from "react"
 import { Card } from "./Card"
 import { Feed, SectionPost } from "./style"
+import { HasToken } from "../utils/storage"
+import { getPosts } from "../services/ApiFeedPost"
+import { useSelector } from "react-redux"
 
 export const ContentFeed = () => {
+  const sentNewPost = useSelector((state: any) => state.newPost)
+  const [posts, setPosts] = useState<any>([])
+  useEffect(() => {
+    const path = window.location.pathname.split('/')
+    let id: number;
+    if (path[1] === 'profile') {
+      id = HasToken()
+    } else {
+      id = 0
+    }
+    async function fetchPost() {
+     const posts = await getPosts(id)
+    setPosts(posts)
+    }
+    fetchPost()
+  }, [])
+  useEffect(() => {
+    if (sentNewPost === true) {
+    window.location.reload()
+    }
+  }, [sentNewPost])
   return (
     <Feed>
-      <SectionPost>
-        <Card />
-      </SectionPost>
-    </Feed>
+    <SectionPost>        
+      {posts && posts
+        .sort((a: any, b: any) => {
+          const dateA: any = new Date(a.create_at);
+          const dateB: any = new Date(b.create_at);
+          return dateB - dateA;
+        })
+        .map((post: any) => (
+          <div key={post.post_id}>
+            <Card
+              post={post}
+            />
+          </div>
+        ))}
+    </SectionPost>
+  </Feed>
   )
 }

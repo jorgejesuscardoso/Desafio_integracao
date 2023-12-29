@@ -36,3 +36,35 @@ export const sendPost = async (postContent: any, userId: number) => {
     throw new Error("Error sending post")
   }
 }
+
+export const updatePost = async (postContent: string, id: number) => {
+  const updatedPost = {
+    content: postContent
+  }
+  try {
+    const response = await fetch(`${api}${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(updatedPost)
+    })
+    const data = await response.json()
+    console.log(data)
+    return data
+  } catch (error) {
+    throw new Error("Error updating post")
+  }
+}
+
+export const deletePost = async (id: number) => {
+  try {
+    const response = await fetch(`${api}${id}`, {
+      method: 'DELETE',
+    })
+    const data = await response.json()
+    return data
+  } catch (error) {
+    throw new Error("Error deleting post")
+  }
+}

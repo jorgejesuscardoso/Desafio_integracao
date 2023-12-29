@@ -5,7 +5,7 @@ import { ContentFeed } from "./ContentFeed";
 import { IcoContent, Main, SectionTextArea, SendIcon, TextArea } from "./style";
 import { HasToken } from "../utils/storage";
 import { useState } from "react";
-import { sendPost } from "../services/ApiHandlePosts";
+import { sendPost } from "../services/ApiFeedPost";
 import { useDispatch } from "react-redux";
 import { newPostAction } from "../redux/actions/newPostAction";
 

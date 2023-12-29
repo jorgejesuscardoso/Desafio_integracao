@@ -1,46 +1,74 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Cards, ContentCard, HeaderCard } from "./style"
-import { useEffect, useState } from "react";
-import { getPosts } from "../services/ApiHandlePosts";
+import { MenuCard, Cards, ContentCard, HeaderCard, DisplayMenuCard, TextAreaEditPost } from "./style"
 import { TumbPost } from "../photo/TumbPosts";
-import { HasToken } from "../utils/storage";
+import { useEffect, useState } from "react";
+import { handleDate } from "../utils/date";
+import { HandleDeletePost } from "../utils/deletPost";
+import { updatePost } from "../services/ApiFeedPost";
 
-export const Card = () => {
-  const [posts, setPosts] = useState([])
+export const Card = ({ post }: any) => {
+  const [datePost, setDatePost] = useState('')
+  const [editPost, setEditPost] = useState(false)
+  const [edit, setEdit] = useState(false)
+  const [editedPost, setEditedPost] = useState(post.content)
+
   useEffect(() => {
-    const path = window.location.pathname.split('/')
-    let id: number;
-    if (path[1] === 'profile') {
-      id = HasToken()
-    } else {
-      id = 0
-    }
-    async function fetchPost() {
-     const posts = await getPosts(id)
-    setPosts(posts)
-    }
-    fetchPost()
+   const dateString = handleDate(post);
+    setDatePost(dateString)
   }, [])
+  const deletePost = () => {
+    HandleDeletePost(post.post_id)
+    window.location.reload();
+  }
+  const handleEditPost = () => {
+    try {
+    updatePost(post.post_id, editedPost);
+    setEdit(!edit);
+    setEditPost(!editPost);
+    window.location.reload();
+    } catch (error) {
+      throw new Error("Erro ao editar post")
+    }
+  }
+  const showMenuCard = () => {
+    setEditPost(!editPost)
+  }
   return (
     <Cards>
-      { posts && posts.map((post: any) => (
-        <div key={ post.post_id }>
-          <HeaderCard>
-            <TumbPost
-              photo={ post.photoUrl }
-            />
-            <h3>{ post.user_name} { post.last_name }</h3>
-            <p>Há 2 horas</p>
-          </HeaderCard>
-
-          <ContentCard >
-            <p>{ post.content }</p>
-          </ContentCard>
-        </div>
-      )
+      <HeaderCard>
+        <TumbPost
+          photo={ post.photoUrl }
+        />
+        <h3>{ post.user_name} { post.last_name }</h3>
+        <p>Publicado {datePost}</p>
+        <MenuCard onClick={ showMenuCard }>...</MenuCard>
+        { editPost ? ( 
+          <DisplayMenuCard>
+            <button onClick={ () => setEdit(!edit) }>Editar</button>
+            <button onClick={ deletePost } >Deletar</button>
+          </DisplayMenuCard>
+          ) : ''}
         
-        )
-      }
+      </HeaderCard>
+      <ContentCard >
+        <p>{ post.content }</p>{ edit ? (
+          <TextAreaEditPost>
+            <input
+              type="text"
+              value={ editedPost }
+              onChange={ (e) => setEditedPost(e.target.value) }
+            />
+            <div>
+              <button onClick={ handleEditPost }>Salvar</button>
+              <button onClick={ () => {
+                setEdit(!edit);
+                setEditPost(!editPost);
+                } }>Cancelar</button>
+            </div>
+          </TextAreaEditPost>
+        ) : ''}
+      </ContentCard>
     </Cards>
   )
 }

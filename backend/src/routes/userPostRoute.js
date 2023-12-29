@@ -1,5 +1,5 @@
 const express = require('express');
-const { getPosts, insertPost } = require('../db/postDB');
+const { getPosts, insertPost, deletePost, updatePost } = require('../db/postDB');
 
 const router = express.Router();
 
@@ -54,6 +54,44 @@ router.post('/', async (req, res) => {
     console.error(err);
     res.status(500).json({
       message: 'Erro ao criar post',
+    });
+  }
+});
+
+router.put('/:id', async (req, res) => {
+  const { id } = req.params;
+  const { content } = req.body;
+  try {
+    if (!content) {
+      return res.status(400).json({
+        message: 'O campo "conteúdo" é obrigatório',
+      });
+    }
+    const result = await updatePost(id, content);
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ message: 'Post não encontrado' });
+    }
+    res.status(200).json({ message: 'Post atualizado com sucesso' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({
+      message: 'Erro ao atualizar post',
+    });
+  }
+});
+
+router.delete('/:id', async (req, res) => {
+  const { id } = req.params;
+  try {
+    const result = await deletePost(id);
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ message: 'Post não encontrado' });
+    }
+    res.status(200).json({ message: 'Post excluído com sucesso' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({
+      message: 'Erro ao excluir post',
     });
   }
 });
