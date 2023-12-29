@@ -9,23 +9,32 @@ import Header from "../header/Hader";
 import { Feed } from "../feed/Feed";
 import { IconesNav } from "../navbar/Icones";
 import { FloatMenu } from "../float-menu/FloatMenu";
+import { useLocation } from "react-router-dom";
 
 export function Profile() {
   const [showFloatMenu, setShowFloatMenu] = useState(false);
+  const location = useLocation();
+  const { state } = location;
+  const photo  = state ? state.photo : null;
+  useEffect(() => {
+    HasToken();
+  },[]);
 
   useEffect(() => {
     HasToken();
-  },[])
+  },[]);
 
   const toggleMenu = () => {
     setShowFloatMenu(!showFloatMenu);
-  }
+  };
 
  return (
    <Main>
     <Header>
       <ProfileImg>      
-        <ProfilePhoto />
+        <ProfilePhoto 
+          photo={ photo }
+        />
       </ProfileImg>
     </Header>
     <MainContentProfile>

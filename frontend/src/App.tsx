@@ -3,7 +3,6 @@ import { Profile } from "./profile/ProfileContent"
 import { Login } from "./login/Login"
 import { Home } from "./home/Home"
 import { LayOut } from "./layout/LayOut"
-import { OtherUserProfile } from "./profile/OtherProfile"
 
 function App() {
  
@@ -14,7 +13,7 @@ function App() {
         <Route path="/home" element={<Home />} />
       </Route>
       <Route path="/profile" element={<Profile />} />
-      <Route path="/profile/:id" element={<OtherUserProfile />} />
+      <Route path="/profile/:id" element={<Profile />} />
       <Route path="*" element={<h1>Not Found</h1>} />
     </Routes>
   )

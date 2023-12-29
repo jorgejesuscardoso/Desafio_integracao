@@ -112,7 +112,7 @@ export const HeaderCard = styled.div`
   gap: 0.5rem;
   
   h3 {
-      font-size: 1.2rem;
+      font-size: 1rem;
       color: var(--whit-color-1);
       font-weight: bold;
     }

@@ -4,11 +4,14 @@ import { GetPersonalData } from "../utils/getUserData";
 import { HasToken } from "../utils/storage";
 import { MainContentAsideLeft, MainSection } from "./Style";
 import { HandlePhoto } from "../photo/SendImage";
-import { User } from "../types";
+import { useLocation } from "react-router-dom";
 
 export function PersonalData() {
+  const path = window.location.pathname.split('/profile/')
+  const location = useLocation();
+  const states = location.state;
   const { user } = GetPersonalData();
-  const { first_name, last_name, birth_day, age, phone, address, cep, city, state, id } = user as User;
+  const { first_name, last_name, birth_day, age, phone, address, cep, city, state, id } = states ? states : user;
   useEffect(() => {
     HasToken()
   }
@@ -31,7 +34,7 @@ export function PersonalData() {
           </div>
         )}
       </MainContentAsideLeft>
-      <HandlePhoto />
+      { path[0] === '/profile' && <HandlePhoto /> }
     </MainSection>
   )
 }

@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { MenuCard, Cards, ContentCard, HeaderCard, DisplayMenuCard, TextAreaEditPost, BtnProfileLink } from "./style"
+import { MenuCard, Cards, ContentCard, HeaderCard, DisplayMenuCard, TextAreaEditPost, BtnProfileLink } from "../feed/style"
 import { TumbPost } from "../photo/TumbPosts";
 import { useEffect, useState } from "react";
 import { handleDate } from "../utils/date";
