@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { MenuCard, Cards, ContentCard, HeaderCard, DisplayMenuCard, TextAreaEditPost, BtnProfileLink } from "../feed/style"
+import { MenuCard, Cards, ContentCard, HeaderCard, DisplayMenuCard, TextAreaEditPost, BtnProfileLink, TumbPostBtn } from "./style"
 import { TumbPost } from "../photo/TumbPosts";
 import { useEffect, useState } from "react";
 import { handleDate } from "../utils/date";
@@ -39,15 +39,16 @@ export const Card = ({ post }: any) => {
   }
   const handleUserProfile = async () => {
     const userData = await getPersonalData(post.user_id);
-    console.log(userData)
     navigate(`/profile/${userData.user_id}`, { state: userData })
   }
   return (
     <Cards>
       <HeaderCard>
-        <TumbPost
-          photo={ post.photoUrl }
-        />
+        <TumbPostBtn onClick={ handleUserProfile }>
+          <TumbPost
+            photo={ post.photoUrl }
+          />
+        </TumbPostBtn>
         <BtnProfileLink onClick={ handleUserProfile }>
           <h3>{ post.user_name} { post.last_name }</h3>
         </BtnProfileLink>

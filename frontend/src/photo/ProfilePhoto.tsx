@@ -8,7 +8,6 @@ export const ProfilePhoto = (photos: any) => {
   const { user } = GetPersonalData();
   const { photo } = user as User;
   const profilePhoto = photos.photo ? photos.photo : photo;
-  console.log(photos)
   return (
     <div>      
       <ProfilePic src={ profilePhoto || notPhotoIco } alt="Foto de Perfil" />

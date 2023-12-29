@@ -59,7 +59,7 @@ export const HandlePhoto = () => {
 
   return (
     <Main>
-      <h1>Enviar Foto</h1>
+      
       <FormSendImg action="" method="POST" encType="multipart/form-data" onSubmit={ (e) => handlePhoto(e) }>
         <label htmlFor="file"><b>Foto de perfil:</b></label>
         <br />
@@ -68,9 +68,9 @@ export const HandlePhoto = () => {
       </FormSendImg>
 
       <FormSendImg action="" method="POST" encType="multipart/form-data" onSubmit={ (e) => handleBanner(e) }>
-        <label htmlFor="file"><b>Escolher Banner:</b></label>
+        <label htmlFor="fileBanner"><b>Escolher Banner:</b></label>
         <br />
-        <input type="file" id="file" name='banner' onChange={ handleBannerChange } />
+        <input type="file" id="fileBanner" name='banner' onChange={ handleBannerChange } />
         <button type="submit">Enviar</button>
       </FormSendImg>
     </Main>

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Left = styled.aside `
   overflow: hidden;
-  position: absolute;
+  position: fixed;
   display: flex;
   justify-content: center;
   top: 8vh;
@@ -31,12 +31,11 @@ export const Left = styled.aside `
         border-radius: 10px;
       
       }
-  }
-  
+  }  
 `;
 
 export const Right = styled.aside `
-  position: absolute;
+  position: fixed;
   display: flex;
   justify-content: center;
   top: 8vh;
