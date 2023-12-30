@@ -18,13 +18,22 @@ export const Feed = () => {
     sendPost(posts, id)
     dispatch(newPostAction())
   }
+  const handlwKeyPress = (e: any) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault()
+      setPosts((prev) => prev + '\n')
+    }
+  }
   return (
     <Main>
       <SectionTextArea>
         <Icons />
         <TextArea
+          value={ posts }
           placeholder="O que você está pensando?"
           onChange={ (e) => setPosts(e.target.value) }
+          onKeyPress={ handlwKeyPress }
+          rows={ 7 }
         >
         </TextArea>
         <IcoContent>

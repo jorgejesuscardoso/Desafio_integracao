@@ -6,9 +6,10 @@ const insertNewUser = (user) => conn.execute(
 );
 
 const insertUserData = (data, id) => conn.execute(
-  'INSERT INTO user_data (first_name, last_name, age, birth_day, user_id) VALUES (?, ?, ?, ?, ?)',
-  [data.first_name, data.last_name, data.age, data.birth_day, id]
+  'INSERT INTO user_data (first_name, last_name, birth_day, user_id, country, ct_email, ct_phone, ct_whatsapp, phone, notification, address, city, state) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+  [data.first_name, data.last_name, data.birth_day, id, data.country, data.ct_email, data.ct_phone, data.ct_whatsapp, data.phone, data.notification, data.address, data.city, data.state]
 );
+
 
 const insertUserImage = (image, id) => conn.execute(
   'UPDATE user_data SET photo = ? WHERE user_id = ?',

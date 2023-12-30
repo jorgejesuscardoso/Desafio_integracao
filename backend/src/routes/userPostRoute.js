@@ -6,12 +6,16 @@ const router = express.Router();
 router.get('/', async (req, res) => {
   try {
     const getPost = await getPosts();
-
+    if (!getPost.length === 0) {
+          return res.status(404).json({
+            message: 'Nenhum post encontrado',
+          });
+        }
     const postWithUrl = getPost.map((post) => {
-      const photoUrl = `http://localhost:3001/profilePhotos/${post.photo}`;
+      const photoUrl = post.photo === undefined ? `http://localhost:3001/profilePhotos/default.png` : `http://localhost:3001/profilePhotos/${post.photo}`;
       return { ...post, photoUrl };
     }); 
-
+   
     res.status(200).json(postWithUrl);
   } catch (err) {
     console.error(err);

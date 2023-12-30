@@ -5,14 +5,14 @@ const userDB = require('../db/userDB');
 const router = express.Router();
 
 router.post('/register', async (req, res) => {
-  const user = req.body;
+  const newUser = req.body;
   try {
-    if (!user.username || !user.password || !user.email) {
+    if (!newUser.username || !newUser.password || !newUser.email) {
       return res.status(400).json({
         message: 'É necessário informar username, password e email',
       });
     }
-    const [result] = await userDB.insertNewUser(user);
+    const [result] = await userDB.insertNewUser(newUser);
     res.status(201).json({
       message: `Novo usuário criado com sucesso!`,
     });
@@ -106,7 +106,9 @@ router.get('/:id/data', async (req, res) => {
     const user = await userDB.findUserData(id);
 
     const photoPath = `http://localhost:3001/profilePhotos/${user[0][0].photo}`;
+
     const bannerPath = `http://localhost:3001/profileBanners/${user[0][0].banner}`;
+
     const usarData = photoPath ? { ...user[0][0], photo: photoPath, banner: bannerPath } : user[0][0];
 
     res.status(200).json(usarData);

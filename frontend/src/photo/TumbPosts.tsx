@@ -4,10 +4,10 @@ type TumbPostProps = {
   photo: string
 }
 export const TumbPost = ({ photo }: TumbPostProps) => {
-  
+  const tumbs = photo.includes('undefined') ? notPhotoIco : photo
   return (
     <div>      
-      <ProfilePic src={ photo || notPhotoIco } alt="Foto de Perfil" />
+      <ProfilePic src={ tumbs } alt="Foto de Perfil" />
     </div>
   )
 }

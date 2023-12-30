@@ -27,7 +27,6 @@ export function Profile() {
   const toggleMenu = () => {
     setShowFloatMenu(!showFloatMenu);
   };
-
  return (
    <Main>
     <Header>

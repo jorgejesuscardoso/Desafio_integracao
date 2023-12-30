@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 const api = 'http://localhost:3001/user';
 
 const fetchData = async (userData: string) => {
@@ -26,3 +27,25 @@ export async function getPersonalData(id: number) {
     throw error;
   }
 }
+
+export async function deleteAccount(id: number, data?: any): Promise<void> {
+  const deleteUser = `${api}/${id}`;
+  const deleteData = `${api}/${id}/data`;
+  const deleteUrl = !data ? deleteUser : deleteData; 
+
+  try {
+    const response = await fetch(deleteUrl, {
+      method: 'DELETE',
+    });
+
+    if (!response.ok) {
+      const errorMessage = `Erro ao excluir usuário: ${response.status} - ${response.statusText}`;
+      throw new Error(errorMessage);
+    }
+
+  } catch (error) {
+    console.error("Problemas ao tentar deletar usuário", error);
+    throw error;
+  }
+}
+

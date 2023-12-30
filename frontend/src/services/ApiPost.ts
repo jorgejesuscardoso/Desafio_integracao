@@ -66,3 +66,33 @@ export const HandleSendBanner = async (banner: FormData,) => {
       throw error;
     }
   }
+
+export const RegisterNewUser = async (data: LoginProps) => {
+  try {
+    const response = await fetch(`${api}/register`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    const dataResponse = await response.json();
+    console.log(dataResponse)
+    return dataResponse;
+  } catch (error) {
+    throw new Error("Problemas ao tentar cadastrar usuário");
+    }
+}
+
+export const InsertUserData = async (data: any, id: number) => {
+  try {
+    const response = await fetch(`${api}/${id}/data`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    const dataResponse = await response.json();
+    console.log(dataResponse)
+    return dataResponse;
+  } catch (error) {
+    throw new Error("Problemas ao tentar cadastrar dados do usuário");
+    }
+}

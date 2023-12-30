@@ -76,3 +76,42 @@ export const Logout = styled.button`
     color: var(--white-color);
   }
 `;
+
+export const Menusettings = styled.div`
+  background-color: var(--background-dark-grey-2);
+  position: fixed;
+  top: 9.5%;
+  right: 21%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  width: 15%;
+  border-radius: 0.5rem;
+  transition: background-color 0.1s ease;
+  gap: 1.5rem;
+  
+    button {
+      background-color: var(--secondary-color-dark);
+      border: 1px solid var(--secondary-color-light);
+      border-radius: 7px;
+      color: var(--secondary-color-light);
+      text-align: center;
+      width: 70%;
+      height: 5vh;
+      font-size: 1.3rem;
+
+      &:hover {
+        background-color: red;
+        font-weight: bold;
+        color: var(--white-color-2);
+        border-radius: 7px;
+      }
+    }
+    p {
+      color: var(--white-color);
+      text-align: center;
+      height: 5vh;
+    }
+`;

@@ -34,14 +34,13 @@ export const ContentFeed = () => {
     window.location.reload()
     }
   }, [sentNewPost])
-
   return (
     <Feed>
     <SectionPost>        
       {posts && posts
         .sort((a: any, b: any) => {
-          const dateA: any = new Date(a.create_at);
-          const dateB: any = new Date(b.create_at);
+          const dateA: any = new Date(a.created_at);
+          const dateB: any = new Date(b.created_at);
           return dateB - dateA;
         })
         .map((post: any) => (

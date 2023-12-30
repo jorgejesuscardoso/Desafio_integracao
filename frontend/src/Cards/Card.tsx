@@ -29,7 +29,6 @@ export const Card = ({ post }: any) => {
     updatePost(post.post_id, editedPost);
     setEdit(!edit);
     setEditPost(!editPost);
-    window.location.reload();
     } catch (error) {
       throw new Error("Erro ao editar post")
     }
@@ -63,12 +62,13 @@ export const Card = ({ post }: any) => {
         
       </HeaderCard>
       <ContentCard >
-        <p>{ post.content }</p>{ edit ? (
+        <p>{ post.content }</p>
+        { edit ? (
           <TextAreaEditPost>
-            <input
-              type="text"
+            <textarea
               value={ editedPost }
               onChange={ (e) => setEditedPost(e.target.value) }
+              rows={ 7 }
             />
             <div>
               <button onClick={ handleEditPost }>Salvar</button>

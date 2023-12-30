@@ -4,6 +4,7 @@ import { Login } from "./login/Login"
 import { Home } from "./home/Home"
 import { LayOut } from "./layout/LayOut"
 import { Register } from "./register/Register"
+import { ProfileEdit } from "./profile/ProfileEdit"
 
 function App() {
  
@@ -15,6 +16,7 @@ function App() {
       </Route>
       <Route path="/profile" element={<Profile />} />
       <Route path="/profile/:id" element={<Profile />} />
+      <Route path="/profile/edit" element={<ProfileEdit />} />
       <Route path="/register" element={<Register />} />
       <Route path="*" element={<h1>Not Found</h1>} />
     </Routes>

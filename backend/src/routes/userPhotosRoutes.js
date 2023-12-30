@@ -20,7 +20,7 @@ const storage = multer.diskStorage({
 		cb(null, newFileName);
 	}
 });
-const storage2 = multer.diskStorage({
+/* const storage2 = multer.diskStorage({
 	destination: (req, file, cb) => {
 		let dir = `backend/uploads/profilePhotos`;		
 		cb(null, dir);
@@ -32,7 +32,7 @@ const storage2 = multer.diskStorage({
 		const newFileName = `photo_user_${userId}${extension}` ;
 		cb(null, newFileName);
 	}
-});
+}); */
 
 const upload = multer({ storage });  
 
@@ -54,6 +54,6 @@ router.post('/upload', upload.single('photo'), async (req, res) => {
 		res.status(500).json({ error: 'Ocorreu um erro durante o upload.' });
 }
 });
- 
+  
 
 module.exports = router;

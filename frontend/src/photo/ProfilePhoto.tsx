@@ -1,16 +1,24 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { useEffect, useState } from "react";
 import { User } from "../types";
 import { notPhotoIco } from "../utils/exports";
 import { GetPersonalData } from "../utils/getUserData";
 import { ProfilePic } from "./style";
 
-export const ProfilePhoto = (photos: any) => {
+export const ProfilePhoto = (pic: any) => {
+  const [getPhoto, setGetPhoto] = useState<any>(notPhotoIco);
   const { user } = GetPersonalData();
   const { photo } = user as User;
-  const profilePhoto = photos.photo ? photos.photo : photo;
+  useEffect(() => {
+    if (pic.photo) {
+      setGetPhoto(pic.photo);
+    } else if (photo) {
+      setGetPhoto(photo);
+    }
+  }, [pic, photo]);
   return (
     <div>      
-      <ProfilePic src={ profilePhoto || notPhotoIco } alt="Foto de Perfil" />
+      <ProfilePic src={ getPhoto } alt="Foto de Perfil" />
     </div>
   )
 }

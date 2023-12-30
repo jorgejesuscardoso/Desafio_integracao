@@ -5,24 +5,24 @@ export interface LoginProps {
 }
 
 export interface User {
-  terms: boolean;
   first_name: string;
   last_name: string;
   birth_day: string;
   email?: string;
-  isPhone: string;
+  phone: string;
   address?: string;
   city: string;
   state: string;
   country: string;
-  id: number;
-  photo: string;
+  id?: number;
+  user_id: number;
+  photo?: string;
   banner?: string;
-  isWhatsapp: boolean;
-  notifications: boolean;  
-  ct_email: boolean;
-  ct_phone: boolean;
-  ct_whatsapp: boolean;
+  isWhatsapp: string;
+  notification: string;  
+  ct_email: string;
+  ct_phone: string;
+  ct_whatsapp: string;
   
 }
 

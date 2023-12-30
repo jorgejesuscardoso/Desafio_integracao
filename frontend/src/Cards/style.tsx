@@ -103,7 +103,7 @@ export const TextAreaEditPost = styled.div`
   width: 40%;
   height: 25vh;
   z-index: 100;
-  input {
+  textArea {
     background-color: var(--white-color-1);
     width: 100%;
     height: 85%;

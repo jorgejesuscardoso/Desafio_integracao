@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 export const handleDate = (post: any) => {
-  const date: any = new Date(post.create_at)
+  const date: any = new Date(post.created_at)
   const now: any = new Date()
   const diffDate = now - date;
 

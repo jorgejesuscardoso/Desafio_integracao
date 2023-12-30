@@ -1,9 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from 'react';
 import { HasToken } from '../utils/storage';
 import { HandleSendBanner, HandleSendPhoto } from '../services/ApiPost';
-import { FormSendImg, Main } from './style';
+import { FormSendImg, Main, TogglePhotoBtn } from './style';
 
-export const HandlePhoto = () => {
+export const HandlePhoto = ({ toggleSendPhoto }: any) => {
   const [photo, setPhoto] = useState<File>();
   const [banner, setBanner] = useState<File>();
 
@@ -30,6 +31,9 @@ export const HandlePhoto = () => {
     } catch (error) {
       console.log(error);
     }
+    setTimeout(() => {
+      window.location.reload();
+    } , 1000);
   };
 
   const handleBannerChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -55,11 +59,14 @@ export const HandlePhoto = () => {
     } catch (error) {
       console.log(error);
     }
+    setTimeout(() => {
+      window.location.reload();
+    } , 1000);
   };
 
   return (
     <Main>
-      
+      <TogglePhotoBtn onClick={ toggleSendPhoto }><h1>X</h1></TogglePhotoBtn>
       <FormSendImg action="" method="POST" encType="multipart/form-data" onSubmit={ (e) => handlePhoto(e) }>
         <label htmlFor="file"><b>Foto de perfil:</b></label>
         <br />

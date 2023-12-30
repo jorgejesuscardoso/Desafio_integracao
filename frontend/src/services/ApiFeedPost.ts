@@ -11,6 +11,9 @@ const fetchPost = async (id: number) => {
 export const getPosts = async (id: number) => {
  try {
    const fetch = await fetchPost(id)
+   if (fetch.length === 0) {
+      return "No posts yet"
+    }
    return fetch
  } catch (error) {
     throw new Error("Error fetching posts")

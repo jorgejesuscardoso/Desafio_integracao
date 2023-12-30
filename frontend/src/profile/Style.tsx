@@ -107,3 +107,53 @@ export const IconsMenu = styled.div`
       list-style: none;
     }
 `;
+export const EditProfile = styled.button`
+  color: var(--white-color-2);
+  border: 1px solid var(--secondary-color-dark);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  width: 8rem;
+  height: 2.5rem;
+  margin-top: 1rem;
+
+  &:hover {    
+    background-color: var(--secondary-color-dark);
+    cursor: pointer;
+  }
+`;
+
+export const SendData = styled.button`
+  color: var(--white-color-2);
+  border: 1px solid var(--secondary-color-dark);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  width: 8rem;
+  height: 2.5rem;
+  margin-top: 1rem;
+
+  &:hover {    
+    background-color: var(--secondary-color-dark);
+    cursor: pointer;
+  }
+`;
+
+export const BackProfile = styled.button`
+  color: var(--white-color-2);
+  border: 1px solid var(--secondary-color-dark);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  width: 12rem;
+  height: 2.5rem;
+  margin-top: 1rem;
+
+  &:hover {    
+    background-color: var(--secondary-color-dark);
+    cursor: pointer;
+  }
+`;

@@ -82,7 +82,7 @@ export const Login = () => {
                 }
               }
               placeholder="Digite sua senha"
-              minLength={ 6}
+              minLength={ 5}
               required
             />
           </div>
