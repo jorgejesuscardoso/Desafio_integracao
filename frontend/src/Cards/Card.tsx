@@ -22,7 +22,9 @@ export const Card = ({ post }: any) => {
   }, [])
   const deletePost = () => {
     HandleDeletePost(post.post_id)
+    setTimeout(() => {
     window.location.reload();
+    }, 500);
   }
   const handleEditPost = () => {
     try {

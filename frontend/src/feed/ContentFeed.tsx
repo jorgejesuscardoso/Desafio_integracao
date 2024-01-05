@@ -31,7 +31,9 @@ export const ContentFeed = () => {
 
   useEffect(() => {
     if (sentNewPost === true) {
-    window.location.reload()
+      setTimeout(() => {
+        window.location.reload()
+      }, 500)
     }
   }, [sentNewPost])
   return (
