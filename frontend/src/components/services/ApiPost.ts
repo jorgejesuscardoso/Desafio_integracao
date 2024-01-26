@@ -1,21 +1,21 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { LoginProps } from "../types";
+/* import { LoginProps } from "../types";
 
 const api = 'http://localhost:3001/user';
 const apiPhoto = 'http://localhost:3001/photo';
 
 const fetchDataPostLogin = async (userData: LoginProps) => {
-  /* const { username, password } = userData;
+  const { username, password } = userData;
   const response = await fetch(`${api}/login`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ username, password })
   });
-  const data = await response.json(); */
-  return [];
+  const data = await response.json();
+  return data;
 }
-
-export const HandleLogin = async (data: LoginProps) => {
+ */
+export const HandleLogin = async () => {
   try {
     //const fetch = await fetchDataPostLogin(data)
     return []
@@ -25,18 +25,18 @@ export const HandleLogin = async (data: LoginProps) => {
    }
 }
 
-const fetchPhotos = async (photo: FormData) => {
+/* const fetchPhotos = async (photo: FormData) => {
 
-  /* const response = await fetch(`${apiPhoto}/upload`, {
+  const response = await fetch(`${apiPhoto}/upload`, {
     method: 'POST',
     body: photo
   });
   
-  const data = await response.json(); */
-  return [];
-}
+  const data = await response.json();
+  return data;
+} */
 
-export const HandleSendPhoto = async (photo: FormData,) => {
+export const HandleSendPhoto = async () => {
 
   try {
    // const fetch = await fetchPhotos(photo)
@@ -47,17 +47,17 @@ export const HandleSendPhoto = async (photo: FormData,) => {
    }
 }
 
-const fetchBanner = async (banner: FormData) => { 
-    /* const response = await fetch(`${apiPhoto}/banner`, {
+/* const fetchBanner = async (banner: FormData) => { 
+    const response = await fetch(`${apiPhoto}/banner`, {
       method: 'POST',
       body: banner
     });
     
-    const data = await response.json(); */
-    return [];
-  }
+    const data = await response.json();
+    return data;
+  } */
 
-export const HandleSendBanner = async (banner: FormData,) => {  
+export const HandleSendBanner = async () => {  
     try {
      // const fetch = await fetchBanner(banner)
       return [];
@@ -67,7 +67,7 @@ export const HandleSendBanner = async (banner: FormData,) => {
     }
   }
 
-export const RegisterNewUser = async (data: LoginProps) => {
+export const RegisterNewUser = async () => {
   try {
     /* const response = await fetch(`${api}/register`, {
       method: 'POST',
@@ -82,7 +82,7 @@ export const RegisterNewUser = async (data: LoginProps) => {
     }
 }
 
-export const InsertUserData = async (data: any, id: number) => {
+export const InsertUserData = async () => {
   try {
     /* const response = await fetch(`${api}/${id}/data`, {
       method: 'POST',

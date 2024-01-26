@@ -1,25 +1,24 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-const api = 'http://localhost:3001/user';
+/* const api = 'http://localhost:3001/user';
 
 const fetchData = async (userData: string) => {
   const response = await fetch(userData)
   const data = await response.json()
   return data
 }
-
-export async function getUser(id: number) { 
-  const userData = !id ? api : `${api}/${id}`;
+ */
+export async function getUser() { 
+ // const userData = !id ? api : `${api}/${id}`;
   try {
-   const fetch = await fetchData(userData)
-   console.log(fetch)
-   return fetch
+   //const fetch = await fetchData(userData)
+   return []
   } catch (error) {
     console.log("Problemas ao tentar buscar usuário",error)
     throw error;
   }
 }
-export async function getPersonalData(id: number) { 
-  const userData = !id ? api : `${api}/${id}/data`;
+export async function getPersonalData() { 
+  //const userData = !id ? api : `${api}/${id}/data`;
   try {
     //const fetch = await fetchData(userData)
     return []    
@@ -29,10 +28,10 @@ export async function getPersonalData(id: number) {
   }
 }
 
-export async function deleteAccount(id: number, data?: any): Promise<void> {
-  const deleteUser = `${api}/${id}`;
+export async function deleteAccount(): Promise<void> {
+  /* const deleteUser = `${api}/${id}`;
   const deleteData = `${api}/${id}/data`;
-  const deleteUrl = !data ? deleteUser : deleteData; 
+  const deleteUrl = !data ? deleteUser : deleteData;  */
 
   try {
     /* const response = await fetch(deleteUrl, {

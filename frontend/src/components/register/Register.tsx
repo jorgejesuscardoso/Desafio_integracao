@@ -2,7 +2,6 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import { LoginProps } from "../../types"
-import { RegisterNewUser } from "../services/ApiPost"
 import { ContainerButtons, Erro, FormContainer, FormRegister, Mainregister, Peh } from "./style"
 
 export const Register = () => {

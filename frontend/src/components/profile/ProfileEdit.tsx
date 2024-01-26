@@ -1,7 +1,7 @@
 import { useState } from "react"
-import { User } from "../types"
+import { User } from "../../types"
 import { HasToken } from "../utils/storage"
-import { InsertUserData } from "../services/ApiPost"
+//import { InsertUserData } from "../services/ApiPost"
 import { useNavigate } from "react-router-dom"
 import { BackProfile, SendData } from "./Style"
 
@@ -26,7 +26,7 @@ export const ProfileEdit = () => {
     })
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    InsertUserData(newUserData, userId)
+    //InsertUserData(newUserData, userId)
     console.log(newUserData)
   }
   const handleNavigate = () => {

@@ -23,11 +23,11 @@ export const Login = () => {
 
   const handleLogin = async ( e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const response = await HandleLogin(isUser)
+    const response = await HandleLogin()
 
-    if (response.token) {
-      localStorage.setItem("token", response.token)
-      localStorage.setItem("userData", JSON.stringify(response.user))
+    if (response) {
+      localStorage.setItem("token", 'token')
+      localStorage.setItem("userData", JSON.stringify(response))
 
       setIsError("")
       setIsLoging("Login efetuado com sucesso!")
@@ -42,7 +42,7 @@ export const Login = () => {
       console.log(response);
       setIsError("Banco de dados ainda está offline")
     }
-    if (response.error) {
+    if (response === undefined) {
       setIsError("Erro ao efetuar login")
     }
   }

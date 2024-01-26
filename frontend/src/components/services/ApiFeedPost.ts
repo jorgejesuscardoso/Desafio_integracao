@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-const api = 'http://localhost:3001/post/'
+//const api = 'http://localhost:3001/post/'
 
-const fetchPost = async (id: number) => {
+/* const fetchPost = async (id: number) => {
   const postProfileOrNot = id > 0 ? `${api}${id}` : api
   const response = await fetch(postProfileOrNot)
   const data = await response.json()
   return data
-}
+} */
 
-export const getPosts = async (id: number) => {
+export const getPosts = async () => {
  try {
    /* const fetch = await fetchPost(id)
    if (fetch.length === 0) {
@@ -20,11 +20,11 @@ export const getPosts = async (id: number) => {
   }
 } 
 
-export const sendPost = async (postContent: any, userId: number) => {
-  const newPost = {
+export const sendPost = async () => {
+  /* const newPost = {
     content: postContent,
     user_id: userId
-  }
+  } */
   try {
     /* const response = await fetch(api, {
       method: 'POST',
@@ -40,10 +40,10 @@ export const sendPost = async (postContent: any, userId: number) => {
   }
 }
 
-export const updatePost = async (postContent: string, id: number) => {
-  const updatedPost = {
+export const updatePost = async () => {
+  /* const updatedPost = {
     content: postContent
-  }
+  } */
   try {
     /* const response = await fetch(`${api}${id}`, {
       method: 'PUT',
@@ -59,7 +59,7 @@ export const updatePost = async (postContent: string, id: number) => {
   }
 }
 
-export const deletePost = async (id: number) => {
+export const deletePost = async () => {
   try {
     /* const response = await fetch(`${api}${id}`, {
       method: 'DELETE',

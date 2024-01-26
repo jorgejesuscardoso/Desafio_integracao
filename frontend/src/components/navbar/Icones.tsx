@@ -1,4 +1,4 @@
-import { ToggleMenu } from "../types";
+import { ToggleMenu } from "../../types";
 import { home, menuIcon, profile } from "../utils/exports";
 import { HomeIcon, ImgMenuIcon, ProfileIcon } from "./style";
 

@@ -28,7 +28,7 @@ export const Card = ({ post }: any) => {
   }
   const handleEditPost = () => {
     try {
-    updatePost(post.post_id, editedPost);
+    updatePost();
     setEdit(!edit);
     setEditPost(!editPost);
     } catch (error) {
@@ -39,8 +39,8 @@ export const Card = ({ post }: any) => {
     setEditPost(!editPost)
   }
   const handleUserProfile = async () => {
-    const userData = await getPersonalData(post.user_id);
-    navigate(`/profile/${userData.user_id}`, { state: userData })
+    const userData = await getPersonalData();
+    navigate(`/profile/${userData}`, { state: userData })
   }
   return (
     <Cards>
