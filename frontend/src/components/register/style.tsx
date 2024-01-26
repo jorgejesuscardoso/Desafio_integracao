@@ -87,3 +87,12 @@ export const Peh = styled.p`
     }
   }
 `;
+
+export const Erro = styled.p`
+  position: absolute;
+  top: 60vh;
+  color: var(--color-error);
+  font-weight: bold;
+  text-align: center;
+  margin-top: 1rem;
+`;

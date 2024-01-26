@@ -21,9 +21,8 @@ export async function getUser(id: number) {
 export async function getPersonalData(id: number) { 
   const userData = !id ? api : `${api}/${id}/data`;
   try {
-    const fetch = await fetchData(userData)
-    console.log(fetch)
-    return fetch    
+    //const fetch = await fetchData(userData)
+    return []    
   } catch (error) {
     console.log("Problemas ao tentar buscar dados pessoais do usuário",error)
     throw error;
@@ -36,7 +35,7 @@ export async function deleteAccount(id: number, data?: any): Promise<void> {
   const deleteUrl = !data ? deleteUser : deleteData; 
 
   try {
-    const response = await fetch(deleteUrl, {
+    /* const response = await fetch(deleteUrl, {
       method: 'DELETE',
     });
 
@@ -44,7 +43,7 @@ export async function deleteAccount(id: number, data?: any): Promise<void> {
       const errorMessage = `Erro ao excluir usuário: ${response.status} - ${response.statusText}`;
       throw new Error(errorMessage);
     }
-
+ */
   } catch (error) {
     console.error("Problemas ao tentar deletar usuário", error);
     throw error;

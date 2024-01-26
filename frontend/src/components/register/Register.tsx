@@ -3,7 +3,7 @@ import { useState } from "react"
 import { Link } from "react-router-dom"
 import { LoginProps } from "../../types"
 import { RegisterNewUser } from "../services/ApiPost"
-import { ContainerButtons, FormContainer, FormRegister, Mainregister, Peh } from "./style"
+import { ContainerButtons, Erro, FormContainer, FormRegister, Mainregister, Peh } from "./style"
 
 export const Register = () => {
   const [newUser, setNewUser] = useState<LoginProps>({
@@ -11,9 +11,10 @@ export const Register = () => {
     password: '',
     email: '',
   })
-  const handleNewUser = () => {
+  const [error, setError] = useState<any>(false)
+  /* const handleNewUser = () => {
     RegisterNewUser(newUser)
-  }
+  } */
   return (
     <Mainregister>
       <h1>Registrar novo usuário</h1>
@@ -21,7 +22,8 @@ export const Register = () => {
         action="POST"
         onSubmit={ (e) => {
           e.preventDefault();
-          handleNewUser();
+          setError(!error);
+          //handleNewUser();
         }}
       >
         <FormContainer>
@@ -83,6 +85,7 @@ export const Register = () => {
       <Peh>Voltar ao inicio? <Link to="/">Voltar</Link></Peh>
       <Peh>*Todos os campos são obrigatórios!</Peh>
       <Peh>*Vocẽ pode alterar esses dados nas configurações em seu perfil!</Peh>
+      {error && <Erro>Erro ao registrar novo usuário!</Erro>}
     </Mainregister>
   )
 }

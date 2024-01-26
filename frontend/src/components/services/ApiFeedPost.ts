@@ -10,11 +10,11 @@ const fetchPost = async (id: number) => {
 
 export const getPosts = async (id: number) => {
  try {
-   const fetch = await fetchPost(id)
+   /* const fetch = await fetchPost(id)
    if (fetch.length === 0) {
       return "No posts yet"
-    }
-   return fetch
+    } */
+   return []
  } catch (error) {
     throw new Error("Error fetching posts")
   }
@@ -26,15 +26,15 @@ export const sendPost = async (postContent: any, userId: number) => {
     user_id: userId
   }
   try {
-    const response = await fetch(api, {
+    /* const response = await fetch(api, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(newPost)
     })
-    const data = await response.json()
-    return data
+    const data = await response.json() */
+    return []
   } catch (error) {
     throw new Error("Error sending post")
   }
@@ -45,16 +45,15 @@ export const updatePost = async (postContent: string, id: number) => {
     content: postContent
   }
   try {
-    const response = await fetch(`${api}${id}`, {
+    /* const response = await fetch(`${api}${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(updatedPost)
     })
-    const data = await response.json()
-    console.log(data)
-    return data
+    const data = await response.json() */
+    return []
   } catch (error) {
     throw new Error("Error updating post")
   }
@@ -62,11 +61,11 @@ export const updatePost = async (postContent: string, id: number) => {
 
 export const deletePost = async (id: number) => {
   try {
-    const response = await fetch(`${api}${id}`, {
+    /* const response = await fetch(`${api}${id}`, {
       method: 'DELETE',
     })
-    const data = await response.json()
-    return data
+    const data = await response.json() */
+    return []
   } catch (error) {
     throw new Error("Error deleting post")
   }
