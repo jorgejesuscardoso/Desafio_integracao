@@ -23,7 +23,7 @@ Caso queira explorar o projeto localmente, siga as instruções abaixo:
 
 # Dependências Front-end
 
-Para instalar todas as dependências, basta que na raiz do projeto, "/socialBush" ou no diretório do front-end, "socialBush/frontend", vocẽ abra o terminal e digite o comando `npm install`. Caso aja algum problema siga as instruções abaixo para instalar e configurar as dependências uma a uma.
+Para instalar todas as dependências, basta que na raiz do projeto, "/socialBush" <b>E</b> no diretório do front-end, "socialBush/frontend", vocẽ abra o terminal e digite o comando `npm install`. Caso aja algum problema siga as instruções abaixo para instalar e configurar as dependências uma a uma.
 
 
 ### React-test-library
@@ -139,7 +139,7 @@ Com isso você conseguirá montar localmente o frontend, caso você tenha algum 
 
 # Dependências Back-end
 
-Para instalar todas as dependências, basta que na raiz do projeto, "/socialBush" ou no diretório do back-end, "socialBush/backend", vocẽ abra o terminal e digite o comando `npm install`. Caso aja algum problema siga as instruções abaixo para instalar e configurar as dependências uma a uma.
+Para instalar todas as dependências, basta que na raiz do projeto, "/socialBush" <b>E</b> no diretório do back-end, "socialBush/backend", vocẽ abra o terminal e digite o comando `npm install`. Caso aja algum problema siga as instruções abaixo para instalar e configurar as dependências uma a uma.
 
 ### Express
 #### Instalação
