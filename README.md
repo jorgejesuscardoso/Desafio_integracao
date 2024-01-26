@@ -1,3 +1,26 @@
+# Bem-vindo ao SocialBush! 🚀
+
+Olá, amigo(a)!
+
+Seja muito bem-vindo(a), este projeto é uma simulação de uma rede social que estou construindo com paixão e dedicação.
+
+### Visão Geral do Projeto:
+A SocialBush é uma projeto que busca recriar a dinâmica de uma rede social, proporcionando uma experiência envolvente e interativa para seus usuários.
+
+### Status Atual:
+Atualmente, o projeto está hospedado no [Netlify](https://socialbushido.netlify.app/), permitindo um rápido e fácil acesso ao deploy. No entanto, por favor, note que a visualização completa do funcionamento pode ser limitada, pois o banco de dados ainda não foi migrado para a nuvem. Estou trabalhando para implementar essa etapa crucial, e em breve você poderá explorar todas as funcionalidades que estou desenvolvendo.
+
+### Como Contribuir:
+Esta aberto a colaboradores e contribuições! Se você está animado para fazer parte deste projeto, sinta-se à vontade para explorar e contribuir com suas habilidades. Sua ajuda é fundamental para o sucesso deste empreendimento.
+
+# Instruções para Visualização Local:
+Caso queira explorar o projeto localmente, siga as instruções abaixo:
+
+    Clone o repositório: git clone git@github.com:jorgejesuscardoso/Desafio_integracao.git
+    Instale as dependências: npm install ou yarn install
+    Inicie o servidor local: docker-compose up -d
+
+
 # Dependências Front-end
 
 Para instalar todas as dependências, basta que na raiz do projeto, "/socialBush" ou no diretório do front-end, "socialBush/frontend", vocẽ abra o terminal e digite o comando `npm install`. Caso aja algum problema siga as instruções abaixo para instalar e configurar as dependências uma a uma.
