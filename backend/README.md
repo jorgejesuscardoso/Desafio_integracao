@@ -1,3 +1,0 @@
-#### Boas vindas ao nosso desafio de integração front-end e back-end!
-Que tal encarar um desafio durante o recesso escolar (13/12/2023 a 09/01/2023)?
-Este desafio foi concebido para avaliar suas habilidades na integração de uma aplicação front-end com uma aplicação back-end, utilizando JavaScript ou Typescript no lado do servidor. Além disso, espera-se o uso do Docker para facilitar a implantação, juntamente com um banco de dados relacional para a persistência de dados. É importante destacar que a dockerização deve englobar tanto o front-end quanto o back-end. O desafio também envolve a implementação de um sistema de autenticação, operações CRUD para pessoas usuárias e a capacidade de realizar upload de imagens. 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { LoginProps } from "../types"
+import { LoginProps } from "../../types"
 import { HandleLogin } from "../services/ApiPost"
 import { useNavigate } from "react-router-dom"
 import { Errors, LoginMsg, Main, RegisterMsg } from "./style"
@@ -40,7 +40,7 @@ export const Login = () => {
     } else {
       console.log(isUser);
       console.log(response);
-      setIsError("Dados inválidos")
+      setIsError("Banco de dados ainda está offline")
     }
     if (response.error) {
       setIsError("Erro ao efetuar login")
