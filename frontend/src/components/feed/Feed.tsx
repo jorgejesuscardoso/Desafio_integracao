@@ -15,8 +15,9 @@ export const Feed = () => {
   const [posts, setPosts] = useState('')
 
   const handlePost = () => {
-    sendPost(posts, id)
+    sendPost()
     dispatch(newPostAction())
+    console.log(id)
   }
   const handlwKeyPress = (e: any) => {
     if (e.key === 'Enter' && !e.shiftKey) {

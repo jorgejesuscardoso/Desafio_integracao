@@ -7,7 +7,7 @@ export function GetUserData() {
   const token = HasToken();
   useEffect(() => {
     async function fetchUser() {
-      const response = await getUser(token)
+      const response = await getUser()
       setUser(response)
     }
     fetchUser()
@@ -19,7 +19,7 @@ export const GetPersonalData = () => {
   const id = HasToken();
   useEffect(() => {
     async function fetchUser() {
-      const response = await getPersonalData(id)
+      const response = await getPersonalData()
       setUser(response)
     }
     fetchUser()

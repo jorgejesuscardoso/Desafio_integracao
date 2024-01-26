@@ -22,8 +22,9 @@ export const ContentFeed = () => {
     } else {
       id = +path[2];
     }
+    console.log(id)
     async function fetchPost() {
-     const posts = await getPosts(id)
+     const posts = await getPosts()
     setPosts(posts)
     }
     fetchPost()

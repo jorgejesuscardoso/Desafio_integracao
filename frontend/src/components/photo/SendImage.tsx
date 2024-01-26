@@ -23,7 +23,7 @@ export const HandlePhoto = ({ toggleSendPhoto }: any) => {
         const formData = new FormData();
         formData.append('id', `${id}`);
         formData.append('photo', photo);
-        const response = await HandleSendPhoto(formData);
+        const response = await HandleSendPhoto();
         console.log(response);
       } else {
         console.log("Nenhuma foto selecionada.");
@@ -51,7 +51,7 @@ export const HandlePhoto = ({ toggleSendPhoto }: any) => {
         const formData = new FormData();
         formData.append('id', `${id}`);
         formData.append('banner', banner);
-        const response = await HandleSendBanner(formData);
+        const response = await HandleSendBanner();
         console.log(response);
       } else {
         console.log("Nenhuma foto selecionada.");

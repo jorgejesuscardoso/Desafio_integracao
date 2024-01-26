@@ -14,17 +14,16 @@ export const FloatMenu = () => {
   const handleDeleteAccount = async () => {
     try {
       const id = HasToken();
-      await deleteAccount(id, 1);     
+      await deleteAccount();     
       setTimeout(async () => {
-        await deleteAccount(id);
+        await deleteAccount();
         handleLogout();
-      }, 100);
-  
+      }, 100);  
+       console.log(id)
     } catch (error) {
       console.error('Erro ao excluir a conta ou fazer logout:', error);
     }
   };
-  
   return (
     <NavBar>
       <ul>
