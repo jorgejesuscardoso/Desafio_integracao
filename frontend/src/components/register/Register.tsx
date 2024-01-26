@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react"
 import { Link } from "react-router-dom"
-import { LoginProps } from "../types"
+import { LoginProps } from "../../types"
 import { RegisterNewUser } from "../services/ApiPost"
+import { ContainerButtons, FormContainer, FormRegister, Mainregister, Peh } from "./style"
 
 export const Register = () => {
   const [newUser, setNewUser] = useState<LoginProps>({
@@ -14,16 +15,16 @@ export const Register = () => {
     RegisterNewUser(newUser)
   }
   return (
-    <div>
+    <Mainregister>
       <h1>Registrar novo usuário</h1>
-      <form 
+      <FormRegister 
         action="POST"
         onSubmit={ (e) => {
           e.preventDefault();
           handleNewUser();
         }}
       >
-        <div>
+        <FormContainer>
           <h2>Dados para validação</h2>
           <div>
             <label htmlFor="username">Nome de usuário:</label>
@@ -69,19 +70,19 @@ export const Register = () => {
               })}
             />
           </div>
-        </div>          
-        <div>
-          <button
-            type="submit"
-          >
-            Registrar
-          </button>
-          <button>Cancelar</button>
-        </div>
-      </form>
-      <p>Voltar ao inicio? <Link to="/">Voltar</Link></p>
-      <p>*Todos os campos são obrigatórios!</p>
-      <p>*Vocẽ pode alterar esses dados nas configurações em seu perfil!</p>
-    </div>
+          <ContainerButtons>
+            <button
+              type="submit"
+            >
+              Registrar
+            </button>
+            <button>Cancelar</button>
+          </ContainerButtons>
+        </FormContainer>
+      </FormRegister>
+      <Peh>Voltar ao inicio? <Link to="/">Voltar</Link></Peh>
+      <Peh>*Todos os campos são obrigatórios!</Peh>
+      <Peh>*Vocẽ pode alterar esses dados nas configurações em seu perfil!</Peh>
+    </Mainregister>
   )
 }

@@ -1,7 +1,7 @@
 import React, { ReactNode, useEffect, useState } from 'react';
 import { Banner, BannerImg } from './style';
 import { GetPersonalData } from '../utils/getUserData';
-import { User } from '../types';
+import { User } from '../../types';
 import { BannerDefault } from '../utils/exports';
 
 interface HeaderProps {

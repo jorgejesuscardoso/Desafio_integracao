@@ -1,10 +1,10 @@
 import { Route, Routes } from "react-router-dom"
-import { Profile } from "./profile/ProfileContent"
-import { Login } from "./login/Login"
-import { Home } from "./home/Home"
-import { LayOut } from "./layout/LayOut"
-import { Register } from "./register/Register"
-import { ProfileEdit } from "./profile/ProfileEdit"
+import { Profile } from "./components/profile/ProfileContent"
+import { Login } from "./components/login/Login"
+import { Home } from "./components/home/Home"
+import { LayOut } from "./components/layout/LayOut"
+import { Register } from "./components/register/Register"
+import { ProfileEdit } from "./components/profile/ProfileEdit"
 
 function App() {
  

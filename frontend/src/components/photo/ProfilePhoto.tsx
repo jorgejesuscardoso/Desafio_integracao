@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from "react";
-import { User } from "../types";
+import { User } from "../../types";
 import { notPhotoIco } from "../utils/exports";
 import { GetPersonalData } from "../utils/getUserData";
 import { ProfilePic } from "./style";
