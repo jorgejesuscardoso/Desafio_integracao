@@ -8,7 +8,7 @@ Seja muito bem-vindo(a), este projeto é uma simulação de uma rede social que 
 A SocialBush é uma projeto que busca recriar a dinâmica de uma rede social, proporcionando uma experiência envolvente e interativa para seus usuários.
 
 ### Status Atual:
-Atualmente, o projeto está hospedado no [Netlify](https://socialbushido.netlify.app/), permitindo um rápido e fácil acesso ao deploy. No entanto, por favor, note que a visualização completa do funcionamento pode ser limitada, pois o banco de dados ainda não foi migrado para a nuvem. Estou trabalhando para implementar essa etapa crucial, e em breve você poderá explorar todas as funcionalidades que estou desenvolvendo.
+Atualmente, o projeto está hospedado no [Netlify](https://socialbushido.netlify.app/), permitindo um rápido e fácil acesso ao deploy. No entanto, por favor, note que a visualização completa do funcionamento é limitada, pois o banco de dados ainda não foi migrado para a nuvem. Estou trabalhando para implementar essa etapa crucial, e em breve você poderá explorar todas as funcionalidades que estou desenvolvendo.
 
 ### Como Contribuir:
 Esta aberto a colaboradores e contribuições! Se você está animado para fazer parte deste projeto, sinta-se à vontade para explorar e contribuir com suas habilidades. Sua ajuda é fundamental para o sucesso deste empreendimento.
