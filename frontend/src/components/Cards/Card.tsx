@@ -21,7 +21,7 @@ export const Card = ({ post }: any) => {
     setDatePost(dateString)
   }, [])
   const deletePost = () => {
-    HandleDeletePost(post.post_id)
+    HandleDeletePost()
     setTimeout(() => {
     window.location.reload();
     }, 500);
