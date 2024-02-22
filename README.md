@@ -111,12 +111,12 @@ Para instalar essa maravilhosa ferramenta, basta inserir no seu terminal o coman
 
 Para poder utilizar é necessário criar um "Store". Na pasta src/, crie um diretorio "redux" e um arquivo "index.ts" ou o nome q preferir. Depois é só criar o codigo que seu redux já esta funcionando:
 
-`import { createStore } from 'redux';
-import { compositWithDevTools } from '@redux-devtools/extension';
-const initialState = {count: o};
-const reducer = (state: initialState, action: AnyAction) => state;
-const store = createStore(reducer, compositWithDevTools());
-export default store;
+`   import { createStore } from 'redux';
+    import { composeWithDevTools } from '@redux-devtools/extension';
+    const initialState = {count: o};
+    const reducer = (state: initialState, action: AnyAction) => state;
+    const store = createStore(reducer, compositWithDevTools());
+    export default store;
 `
 
 
